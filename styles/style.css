@@ -1,0 +1,128 @@
+@font-face {
+	font-family: "Days One", sans-serif;
+	src: url("../fonts/days-one.ttf") format("truetype");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+:root {
+	--color-background: #35495c;
+	--color-text: #e2e5e7;
+	--color-button: #576d7e;
+	--color-button-hover: #3f556b;
+	--color-field: #89c763;
+	--color-field-equally: #5cb15a;
+	--color-field-example: #0e9347;
+	--color-clear-button: #de333f;
+	--color-clear-button-hover: #c61c31;
+	--color-equally-button: #b0c4d9;
+	--color-equally-button-hover: #99b5cd;
+	--color-equally-text: #35495c;
+}
+
+body {
+	width: 295px;
+	height: auto;
+	background-color: var(--color-background);
+	font-family: "Days One", sans-serif;
+	font-weight: 400;
+	color: var(--color-text);
+	padding: 12px;
+}
+
+.field {
+	text-align: right;
+	border-radius: 8px;
+	background-color: var(--color-field);
+	padding: 8px;
+	margin-bottom: 12px;
+}
+
+.field__equally {
+	font-size: 12px;
+	color: var(--color-field-equally);
+	margin-bottom: 4px;
+}
+
+.field__example {
+	font-size: 24px;
+	color: var(--color-field-example);
+}
+
+button {
+	color: var(--color-text);
+	border: none;
+	border-radius: 8px;
+	background-color: var(--color-button);
+	transition: all .15s ease-in-out;
+}
+
+.keyboard {
+	display: grid;
+	grid-template-columns: repeat(5, 51px);
+	grid-template-rows: repeat(5, 51px);
+	gap: 4px;
+}
+
+.keyboard__button-clear {
+	font-size: 30px;
+	background-color: var(--color-clear-button);
+}
+
+.keyboard__button-clear:hover {
+	background-color: var(--color-clear-button-hover);
+}
+
+.keyboard__button-equally {
+	font-size: 40px;
+	color: var(--color-equally-text);
+	background-color: var(--color-equally-button);
+}
+
+.keyboard__button-equally:hover {
+	background-color: var(--color-equally-button-hover);
+}
+
+.keyboard__button-symbol {
+	font-size: 24px;
+}
+
+.keyboard__button-symbol:hover {
+	background-color: var(--color-button-hover);
+}
+
+.keyboard__button_digit {
+	font-size: 28px;
+}
+
+.keyboard__button_digit:hover {
+	background-color: var(--color-button-hover);
+}
+
+.keyboard__button_icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0;
+}
+
+.keyboard__button_icon:hover {
+	background-color: var(--color-button-hover);
+}
+
+.keyboard__button_icon_image {
+	width: 24px;
+	height: 24px;
+}
+
+.keyboard__button_icon_backspace {
+	width: 32px;
+	height: 32px;
+	margin-right: 2px;
+}
+
+.keyboard__button_icon_pi {
+	width: 16px;
+	height: 16px;
+}
