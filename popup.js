@@ -1,7 +1,6 @@
-
-
-const fieldEqually = document.getElementById("fieldEqually");
 const fieldExample = document.getElementById("fieldExample");
+const fieldEqually = document.getElementById("fieldEqually");
+
 const buttonClear = document.getElementById("buttonClear")
 const buttonBackspace = document.getElementById("buttonBackspace")
 const buttonEqually = document.getElementById("buttonEqually")
@@ -16,10 +15,10 @@ buttonsDigit.forEach(button => {
 		const digit = Number(button.innerText)
 
 		if (fieldExample.innerText === "0") {
-			fieldExample.innerHTML = digit.toString()
+			fieldExample.innerText = digit.toString()
 			programExample = digit.toString()
 		} else {
-			fieldExample.innerHTML += digit
+			fieldExample.innerText += digit
 			programExample += digit
 		}
 
@@ -32,10 +31,10 @@ buttonsSymbol.forEach(button => {
 		const symbol = button.innerText
 
 		if (fieldExample.innerText === "0") {
-			fieldExample.innerHTML = "0"
+			fieldExample.innerText = "0"
 			programExample = "0"
 		} else {
-			fieldExample.innerHTML += symbol
+			fieldExample.innerText += symbol
 
 			if (symbol === "×") {
 				programExample += "*"
@@ -50,8 +49,9 @@ buttonsSymbol.forEach(button => {
 	})
 })
 
-buttonClear.addEventListener('click', e => {
+buttonClear.addEventListener('click', function () {
 	fieldExample.innerText = "0"
+	fieldEqually.innerText = "0"
 })
 
 buttonBackspace.addEventListener("click", e => {
@@ -64,17 +64,27 @@ buttonBackspace.addEventListener("click", e => {
 	}
 })
 
-buttonEqually.addEventListener('click', e => {
-	fieldExample.innerText = "Hello, World!"
+buttonEqually.addEventListener('click', function() {
+	const expression = fieldExample.innerText.trim()
+
+	try {
+		const result = parser.evaluate(expression)
+
+		fieldEqually.innerText = fieldExample.innerText
+		fieldExample.innerText = result
+	} catch (e) {
+		fieldEqually.innerText = "Ошибка"
+	}
+
+	console.log(fieldExample.innerText)
 })
 
-buttonPi.addEventListener("click", e => {
-	const example = fieldExample.innerText
-
-	if (example === "0" || example.slice()) {
+buttonPi.addEventListener("click", function() {
+	if (fieldExample.innerText === "0") {
 		fieldExample.innerText = "pi"
 	} else {
 		fieldExample.innerText += "pi"
 	}
+
 })
 
